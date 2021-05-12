@@ -13,13 +13,29 @@ const http = new easyHTTP();
 
 // create new post
 
-newPost = {
-  userId: 1,
-  title: 'a new post',
-  body: 'this is the body of a new post',
+// newPost = {
+//   userId: 1,
+//   title: 'a new post',
+//   body: 'this is the body of a new post',
+// };
+
+// http.post('https://jsonplaceholder.typicode.com/posts', newPost, (err, post) => {
+//   if (!err) {
+//     console.log(post);
+//   } else {
+//     console.log('Error: Something went wrong.');
+//   }
+// });
+
+// update an existing post
+
+updatePost = {
+  userId: 1234,
+  title: 'updated post',
+  body: 'this replaced the body of the post',
 };
 
-http.post('https://jsonplaceholder.typicode.com/posts', newPost, (err, post) => {
+http.put('https://jsonplaceholder.typicode.com/posts/1', updatePost, (err, post) => {
   if (!err) {
     console.log(post);
   } else {
