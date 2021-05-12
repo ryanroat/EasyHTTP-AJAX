@@ -3,13 +3,26 @@ const http = new easyHTTP();
 
 // get posts
 
-let posts;
-// eslint-disable-next-line prefer-arrow-callback
-http.get('https://jsonplaceholder.typicode.com/posts', function (err, response) {
+// http.get('https://jsonplaceholder.typicode.com/posts', (err, posts) => {
+//   if (!err) {
+//     console.log(posts);
+//   } else {
+//     console.log(err);
+//   }
+// });
+
+// create new post
+
+newPost = {
+  userId: 1,
+  title: 'a new post',
+  body: 'this is the body of a new post',
+};
+
+http.post('https://jsonplaceholder.typicode.com/posts', newPost, (err, post) => {
   if (!err) {
-    posts = response;
-    console.log(posts);
+    console.log(post);
   } else {
-    console.log(err);
+    console.log('Error: Something went wrong.');
   }
 });
