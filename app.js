@@ -29,16 +29,26 @@ const http = new easyHTTP();
 
 // update an existing post
 
-updatePost = {
-  userId: 1234,
-  title: 'updated post',
-  body: 'this replaced the body of the post',
-};
+// updatePost = {
+//   userId: 1234,
+//   title: 'updated post',
+//   body: 'this replaced the body of the post',
+// };
 
-http.put('https://jsonplaceholder.typicode.com/posts/1', updatePost, (err, post) => {
+// http.put('https://jsonplaceholder.typicode.com/posts/1', updatePost, (err, post) => {
+//   if (!err) {
+//     console.log(post);
+//   } else {
+//     console.log('Error: Something went wrong.');
+//   }
+// });
+
+// delete an existing post
+
+http.delete('https://jsonplaceholder.typicode.com/posts/1', (err, msg) => {
   if (!err) {
-    console.log(post);
+    console.log(msg);
   } else {
-    console.log('Error: Something went wrong.');
+    console.log(err);
   }
 });
